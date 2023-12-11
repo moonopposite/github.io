@@ -12,7 +12,8 @@
         else if(localStorage.getItem("meek_theme")=="light"){document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-mode").value="light";}
     </script>
     
-<title>Moonopposite</title>
+<title>稻盛和夫：六项精进</title>
+
 
 </head>
 <style>
@@ -23,113 +24,93 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </style>
 
 <style>
-.avatar {transition: 0.8s;width:64px;height:64px;}
-.avatar:hover{transform: scale(1.15) rotate(360deg);}
-#header h1 a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-family:Monaco;margin-left:8px;}
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
 .title-right{display:flex;margin:auto 0 0 auto;}
-.title-right button{margin-right:8px;padding:16px;}
-.title-right .circle{padding: 14px 16px;}
-
-.SideNav{min-width: 360px;}
-.SideNav-icon{margin-right: 16px}
-.SideNav-item .Label{color: #fff;margin-left:8px;}
-.d-flex{min-width:0;}
-.listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
-.listLabels{white-space:nowrap;}
-
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
 @media (max-width: 600px) {
     body {padding: 8px;}
-    .avatar {width:40px;height:40px;}
-    .blogTitle{display:none;}
-    #buttonRSS{display:none;}
-    .LabelTime{display:none;}
+    .postTitle{font-size:24px;}
 }
 </style>
 
 
+
+
 <body>
     <div id="header">
-<h1>
-    <img src="https://meekdai.com/avatar.svg" class="avatar circle" id="avatarImg"><a class="blogTitle">oonopposite</a></h1>
+<span class="postTitle">稻盛和夫：六项精进</span>
 <div class="title-right">
-    <a href="/tag.html"><button id="buttonSearch" class="btn btn-invisible circle" title="搜索">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
+
+    <a href="/"><button id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd" d="M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z"></path>
         </svg>
     </button></a>
-    
-    <a href="/rss.xml" target="_blank"><button id="buttonRSS" class="btn btn-invisible circle" title="RSS">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathRSS" fill-rule="evenodd"></path>
+
+    <a href="https://github.com/moonopposite/moonopposite.github.io/issues/7" target="_blank"><button class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
         </svg>
     </button></a>
-    <button class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
+
+    <button class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
     </button>
+
 </div>
 </div>
     <div id="content">
-<div style="margin-bottom: 16px;">只在其中颠倒颠</div>
-<nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/dao-sheng-he-fu-%EF%BC%9A-liu-xiang-jing-jin.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">稻盛和夫：六项精进</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#bfd4f2"><object><a style="color:#fff" href="/tag.html#Wellbeing">Wellbeing</a></object></span>
-        <span class="Label LabelTime" style="background-color:#A333D0">2023-12-11</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/xin-zhi-gong-fang-yan-xiu-shou-ji-%EF%BC%9A-di-yi-ye.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">心智工坊研修手记：第一页</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#654195"><object><a style="color:#fff" href="/tag.html#Meta">Meta</a></object></span>
-        <span class="Label LabelTime" style="background-color:#A333D0">2023-12-10</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/mang-ge-jing-dian-yu-lu-108.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">芒格经典语录108</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0052cc"><object><a style="color:#fff" href="/tag.html#Wisdom">Wisdom</a></object></span>
-        <span class="Label LabelTime" style="background-color:#A333D0">2023-12-08</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/na-xie-bu-shi-dao-li-de-dao-li-.......html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">那些不是道理的道理......</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#bfd4f2"><object><a style="color:#fff" href="/tag.html#Wellbeing">Wellbeing</a></object></span>
-        <span class="Label LabelTime" style="background-color:#A333D0">2023-12-08</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Ground%20rules%20for%20life.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="witdh:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Ground rules for life</span>
-    </div>
-    <div class="listLabels">
-        <span class="Label" style="background-color:#006b75">1</span>
-        <span class="Label LabelName" style="background-color:#c2e0c6"><object><a style="color:#fff" href="/tag.html#Blog">Blog</a></object></span>
-        <span class="Label LabelTime" style="background-color:#A333D0">2023-12-08</span>
-    </div>
-</a>
-</nav>
+<div class="markdown-body" id="postBody">
+<h1>修習錄｜稻盛和夫：六项精进</h1>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e7f14154bf8a0f5503d38b5546b6e5f1ca1322e274149f37c2cf4c2ab2054edc/68747470733a2f2f6d6d62697a2e717069632e636e2f737a5f6d6d62697a5f6a70672f3663704469617a31473573436c755348474d6e735656395a323752684f513466356d3430696331307a30327a6a6144416463375a365a354d696279556963376d556d73426e6b6169616a706559536261476c336e755444315173512f303f77785f666d743d6a706567"><img src="https://camo.githubusercontent.com/e7f14154bf8a0f5503d38b5546b6e5f1ca1322e274149f37c2cf4c2ab2054edc/68747470733a2f2f6d6d62697a2e717069632e636e2f737a5f6d6d62697a5f6a70672f3663704469617a31473573436c755348474d6e735656395a323752684f513466356d3430696331307a30327a6a6144416463375a365a354d696279556963376d556d73426e6b6169616a706559536261476c336e755444315173512f303f77785f666d743d6a706567" alt="" data-canonical-src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/6cpDiaz1G5sCluSHGMnsVV9Z27RhOQ4f5m40ic10z02zjaDAdc7Z6Z5MibyUic7mUmsBnkaiajpeYSbaGl3nuTD1QsQ/0?wx_fmt=jpeg" style="max-width: 100%;"></a></p>
+<h3>Metadata</h3>
+<ul>
+<li>Title: 修習錄｜稻盛和夫：六项精进</li>
+<li>URL: <a href="https://mp.weixin.qq.com/s/NRphZmb8a1TWxSwxmDbodg" rel="nofollow">https://mp.weixin.qq.com/s/NRphZmb8a1TWxSwxmDbodg</a></li>
+</ul>
+<h3>Highlights &amp; Notes</h3>
+<h3>修習錄｜稻盛和夫：六项精进</h3>
+<h4>一、六項精進：</h4>
+<blockquote>
+<ol>
+<li>付出不亚于任何人的努力！ 2. 要谦虚，不要骄傲！ 3. 每天要反省！ 4. 活着，就要感谢！ 5. 积善行，思利他！ 6. 不要有感性的烦恼！</li>
+</ol>
+</blockquote>
+<h4>二、修習錄：</h4>
+<blockquote>
+<p>付出不亚于任何人的努力！</p>
+</blockquote>
+<p>第一條，是「精進」。 外不亞於任何人的努力，內真誠精進的感動內在的神靈。</p>
+<blockquote>
+<p>要谦虚，不要骄傲！</p>
+</blockquote>
+<p>第二條，是「謙虛」。    對外是和光同塵，與人為善；對內是臣服於神性和愛。</p>
+<blockquote>
+<p>每天要反省！</p>
+</blockquote>
+<p>第三條，是「反省」。    對外，是反思迭代；對內，是守中調頻 。</p>
+<blockquote>
+<p> 活着，就要感谢！</p>
+</blockquote>
+<p>第四條，是「感謝」。  感是感應、感受、感恩；謝是給予，是流動，是聚能。    貴在真誠！</p>
+<blockquote>
+<p>积善行，思利他！</p>
+</blockquote>
+<p>第五條，是「積德」。積善行德，思利他人！真正的得，是行善積德，真正的利益，是利益眾生！</p>
+<blockquote>
+<p> 不要有感性的烦恼！</p>
+</blockquote>
+<p>第六條，是「無我」。 讓感性為愛服務，而不是為煩惱服務。此點貴在「無我」。</p>
+</div>
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="https://moonopposite.github.io/"> Moonopposite </a>
 <p>
@@ -182,19 +163,45 @@ console.log("\n %c Gmeek last %c https://github.com/Meekdai/Gmeek \n\n", "color:
 </script>
 
 <script>
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","moonopposite/moonopposite.github.io");
+    script.setAttribute("issue-term","title");
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else{script.setAttribute("theme","github-light");}
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
 }
 
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
 
 </script>
+
+
+
 
 </html>
